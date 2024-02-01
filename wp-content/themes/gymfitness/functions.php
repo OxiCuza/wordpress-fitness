@@ -48,3 +48,15 @@ function gymfitness_setup() {
 }
 
 add_action('after_setup_theme', 'gymfitness_setup');
+
+// Create widget areas
+function gymfitness_widgets() {
+    register_sidebar(array(
+        'name' => 'Sidebar Manual',
+        'id' => 'sidebar-manual',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+    ));
+}
+
+add_action('widgets_init', 'gymfitness_widgets');
